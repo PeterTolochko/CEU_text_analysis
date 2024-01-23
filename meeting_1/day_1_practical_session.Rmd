@@ -38,7 +38,7 @@ We then need load the packages in our environment:
 
 ```{r, message=FALSE, results='hide'}
 library(tm)
-library(tidyverse)
+require(tidyverse)
 
 ```
 
@@ -79,6 +79,16 @@ $$
 We can write our out function to do this, for example:
 
 ```{r}
+
+simple_function <- function(anything) {
+  anything + 1
+}
+simple_function_2 <- function() {
+  print("hello, world")
+}
+
+
+
 
 create_dtm <- function(texts) {
   
@@ -144,6 +154,12 @@ Create a `Document Term Matrix` of the following texts:
 Text_1 = "banana  banana banana banana chocolate"
 Text_3 = "chocolate chocolate chocolate banana"
 Text_2 = "banana banana"
+
+my_new_vector <- c(Text_1, Text_2, Text_3)
+
+create_dtm(my_new_vector)
+
+
 ```
 
 # Multinomial Model of Texts
@@ -215,6 +231,8 @@ john_rates
 Finally, we want to calculate the relative rates (probabilities) of word use. We can do this by dividing the raw rates we have by the total number of words:
 
 ```{r}
+
+
 total_john <- sum(john_rates)
 probs_john <- john_rates / total_john
 probs_john

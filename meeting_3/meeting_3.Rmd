@@ -49,7 +49,7 @@ Check if your working directory is the correct one:
 
 ```{r}
 getwd()
-setwd("~/Desktop/CEU_text_as_data/day_2/") # this is an example, paste your path here
+setwd("~/Desktop/CEU_text_as_data/meeting_3/") # this is an example, paste your path here
 ```
 
 
@@ -189,7 +189,7 @@ And done!
 p_disputed_hamilton; p_disputed_madison; p_disputed_jay
 ```
 
-As ***HOMEWORK*** (**Not graded**): try all the words (not just the ones we used here) and see if you get better or worse results. For additional ***no points*** you can also play around with *Laplace smoothing* -- i.e., adding a small number to the model to eliminate 0 probability words (e.g., add `1` to all counts before calculating probability).
+As ***Individual Work***: try all the words (not just the ones we used here) and see if you get better or worse results. For additional ***no points*** you can also play around with *Laplace smoothing* -- i.e., adding a small number to the model to eliminate 0 probability words (e.g., add `1` to all counts before calculating probability).
 
 
 # Vector Space Model
@@ -703,3 +703,40 @@ cowplot::plot_grid(hamilton_plot, madison_plot,
 
 
 There are many problems with this method. Please refer to **Fightin’ Words: Lexical Feature Selection and Evaluation for Identifying the Content of Political Conflict** by **Monroe**, **Colaresi** & **Quinn** (2009) for a very cool overview and improvement on the method.
+
+
+# Bonus!
+
+3D vector visualization:
+
+```{r}
+
+# install.packages("rgl")
+# library(rgl)
+# 
+# 
+# 
+# # Define your vectors
+# vector_madison <- c(17, 474, 7)
+# vector_hamilton <- c(102, 859, 374)
+# vector_jay <- c(0, 82, 1)
+# 
+# # Create a 3D plot
+# open3d()
+# plot3d(0, 0, 0, type = "n", xlim = c(-3, 3), ylim = c(-3, 3), zlim = c(-3, 3), main = "3-Word Space")
+# 
+# 
+# 
+# # Add vectors to the plot
+# arrow3d(p0 = c(0, 0, 0), p1 = c(vector_madison[1], vector_madison[2], vector_madison[3]), col = "indianred", length = 0.1)
+# arrow3d(p0 = c(0, 0, 0), p1 = c(vector_hamilton[1], vector_hamilton[2], vector_hamilton[3]), col = "steelblue", length = 0.1)
+# arrow3d(p0 = c(0, 0, 0), p1 = c(vector_jay[1], vector_jay[2], vector_jay[3]), col = "gold", length = 0.1)
+# 
+# 
+# # Add labels to the vectors
+# text3d(vector_madison[1], vector_madison[2], vector_madison[3], texts = "Madison", adj = 0)
+# text3d(vector_hamilton[1], vector_hamilton[2], vector2[3], vector_hamilton = "Hamilton", adj = 0)
+# text3d(vector_jay[1], vector_jay[2], vector_jay[3], texts = "Jay", adj = 0)
+
+
+```
