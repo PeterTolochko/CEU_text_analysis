@@ -59,6 +59,7 @@ What are the most used words in the federalist papers?
 dtm_federalist <- DocumentTermMatrix(clean_federalist$text,
                                      control = list(removePunctuation = TRUE,
                                          stopwords = FALSE))
+
 dtm_federalist <- dtm_federalist %>% as.matrix()
 
 dim(dtm_federalist)
@@ -70,6 +71,9 @@ most_frequent_df <- most_frequent %>% as.list() %>% as_tibble() %>%
   pivot_longer(everything())
 
 most_frequent_df %>% arrange(desc(value))
+
+most_frequent_df %>% arrange(desc(value)) %>% print(n = 20)
+
 
 ```
 
@@ -119,6 +123,7 @@ What if we remove the "basic" stop-words?
 dtm_federalist <- DocumentTermMatrix(clean_federalist$text,
                                      control = list(removePunctuation = TRUE,
                                          stopwords = TRUE))
+
 dtm_federalist <- dtm_federalist %>% as.matrix()
 
 dim(dtm_federalist)
@@ -315,6 +320,7 @@ log_odds_ham <- log_odds(freq_hamilton)
 log_odds_mad <- log_odds(freq_madison)
 
 
+
 ```
 
 Now, log odds ratio:
@@ -324,7 +330,6 @@ log\frac{O^i_w}{O^j_w} = log\frac{f^i_w}{1 - f^i_w}/\frac{f^j_w}{1 - f^j_w} = lo
 $$
 ```{r}
 log_odds_ratio <- log_odds_ham - log_odds_mad
-
 
 
 log_odds_ratio <- log_odds_ratio %>%
@@ -343,6 +348,7 @@ general_frequency <- dtm_federalist %>% as.matrix() %>% colSums() %>%
 
 log_odds_ratio <- log_odds_ratio %>%
   left_join(general_frequency)
+
 
 log_odds_ratio %>%
   mutate(label = ifelse(value > 2 | value < -2, name, NA)) %>%
@@ -378,7 +384,7 @@ madison_plot <- log_odds_ratio %>%
   theme(axis.title.y = element_blank())
 
 
-cowplot::plot_grid(hamilton_plot, madison_plot,
+cowplot::plot_grid(madison_plot, hamilton_plot,
                    ncol = 2)
 
 ```
