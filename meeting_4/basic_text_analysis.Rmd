@@ -1,0 +1,415 @@
+---
+title: "Coding Session / Basics"
+author: "Petro Tolochko"
+date: ""
+output: html_document
+---
+
+### Data
+
+We will be using the State of the Union dataset, available from the `sotu` package.
+
+First, we need to install it:
+
+
+We first need to install the packages required for further analysis.
+
+```{r, echo=FALSE}
+r = getOption("repos")
+r["CRAN"] = "http://cran.us.r-project.org"
+options(repos = r)
+```
+
+
+```{r, message=FALSE, results='hide'}
+
+install.packages("sotu")
+
+```
+
+
+Load the package:
+
+```{r, echo=FALSE}
+require(sotu)
+require(tidyverse)
+require(ggthemes)
+```
+
+The data comes in two separate datasets -- text data `sotu_text` and meta data `sotu_meta`.
+
+
+
+
+```{r}
+str(sotu_text)
+```
+
+
+```{r}
+str(sotu_meta)
+```
+Whare are the dimensions of each dataset?
+
+-------
+
+Let's combine the two datasets together. We will do this in the `tidyverse` ecosystem.
+
+```{r}
+sotu_full <- bind_cols(sotu_text, sotu_meta) %>% as_tibble()
+```
+
+Inspect the data
+
+```{r}
+head(sotu_full)
+```
+
+```{r}
+str(sotu_full)
+```
+
+We need to rename some of the columns
+
+```{r}
+sotu_full <- sotu_full %>%
+  transmute(
+    text = ...1,
+    id = X,
+    president,
+    year,
+    years_active,
+    party,
+    type = sotu_type
+  )
+
+```
+
+
+Let's see...
+```{r}
+sotu_full
+```
+
+### basic string manipulation with R
+
+R stores the basic string in a character vector. 
+
+With `class` you can check if you are actually dealing with a character vector.
+`length` gets the number of items in the vector. 
+With `[]` we can get indexed item in the vector. 
+
+With `str_length` we can retrieve the number of characters in the vector (here in the third item of the vector).
+
+Let us now inspect the column `headline`, the column with our text. 
+
+```{r}
+class(sotu_full$text) 
+length(sotu_full$text)
+sotu_full$text[3]
+str_length(sotu_full$text[3])
+```
+
+Since functions are vectorized, we can do this for multiple observations:
+```{r}
+str_length(sotu_full$text[1:10])
+sum(str_length(sotu_full$text[1:10]))
+max(str_length(sotu_full$text[1:10]))
+```
+
+The function `paste` can be used to merge several strings
+
+```{r}
+sotu_full$text[1]
+sotu_full$text[2]
+
+paste(sotu_full$text[1], sotu_full$text[2], sep='___')
+ 
+
+sotu_full$party_type <- paste(sotu_full$party, sotu_full$type)
+ 
+```
+
+
+```{r}
+sotu_full$party_type[1:4]
+```
+
+As we will see later, it is often convenient to convert all words to lowercase or uppercase.
+
+```{r}
+str_to_lower(sotu_full$text[1])
+str_to_upper(sotu_full$text[1])
+```
+
+Get substrings with `str_sub`. The first argument is the string, the second is the beginning index (starting from 1), and the third is final index.
+
+```{r}
+substr(sotu_full$text[1], 1, 2)
+substr(sotu_full$text[1], 1, 100)
+```
+
+
+**Exercise:**
+
+How do you extract the first letter of each text?
+
+```{r}
+# Solution
+
+
+
+```
+
+
+This is useful when working with date strings as well:
+
+```{r}
+sotu_full$term_begining <- substr(sotu_full$years_active, 1, 4) 
+sotu_full$term_end <- substr(sotu_full$years_active, 6, 9) 
+```
+
+**Exercise:**
+
+What year was the newest sotu address published?
+
+```{r}
+# Solution
+
+
+```
+
+
+Let's now inspect the data more in detail.
+
+Let's see how manuy addresses mention the term `democracy`. We can use the `grep` command to identify these. `grep` returns the index where the word occurs.
+
+
+```{r}
+grep('democracy', sotu_full$text)
+```
+
+`grepl` returns `TRUE` or `FALSE`, indicating whether each element of the character vector contains that particular pattern.
+
+```{r}
+grepl('democracy', sotu_full$text)
+```
+
+**Exercise:**
+
+Check if the text of the address in row 213 includes the word `democracy`
+
+```{r}
+# Solution
+
+
+```
+
+
+
+We can use the results of `grep` to get particular rows. First, check how many texts mention the word `democracy`.
+
+```{r}
+nrow(sotu_full)
+grep('democracy', sotu_full$text)
+length(grep('democracy', sotu_full$text))
+
+```
+
+It is important to note that matching is case-sensitive. You can use the `ignore.case` argument to match to a lowercase version.
+
+```{r}
+grep('democracy', sotu_full$text)
+length(grep('democracy', sotu_full$text, ignore.case = TRUE))
+```
+
+
+Now let's create a new variable that tracks whether the text includes the term `democracy`. 
+
+```{r}
+
+sotu_full <- sotu_full %>%
+  mutate(
+    democracy = grepl("democracy", text)
+  )
+
+```
+
+
+
+**Exercise:**
+
+Pick another keyword that you are interested. How many texts mention that keyword?
+
+```{r}
+# Solution
+
+
+
+```
+
+
+Let's plot the number of appearances of `democracy` per year!
+We can use the `str_count` function.
+
+```{r}
+
+sotu_full <- sotu_full %>%
+  mutate(dem_count = str_count(text, "democracy"))
+
+```
+
+Now we have a count variable `dem_count`. Let's plot it!
+
+```{r}
+sotu_full %>%
+  summarise(dem_count, year) %>%
+  ggplot() +
+  geom_line(aes(year, dem_count)) +
+  theme_bw()
+
+```
+
+Or, we can plot by president:
+
+```{r}
+sotu_full %>%
+  group_by(president) %>%
+  summarise(total_count = sum(dem_count)) %>%
+  ggplot() +
+  geom_bar(aes(president, total_count),
+           stat = 'identity')
+```
+
+
+Doesn't look too good... Let's try to beautify it...
+
+Let's subset rows that have at least one instance of democracy:
+
+
+```{r}
+sotu_full %>%
+  group_by(president) %>%
+  summarise(total_count = sum(dem_count)) %>%
+  filter(total_count > 0) %>%
+  ggplot() +
+  geom_bar(aes(president, total_count),
+           stat = 'identity')
+```
+
+A bit better. We can play around with the text labels:
+
+```{r}
+
+sotu_full %>%
+  group_by(president) %>%
+  summarise(total_count = sum(dem_count)) %>%
+  filter(total_count > 0) %>%
+  ggplot() +
+  geom_bar(aes(president, total_count),
+           stat = 'identity',
+           fill = 'indianred4') +
+  theme_tufte() +
+  theme(axis.text.x = element_text(angle = 45,
+                                   hjust = 1),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank()) +
+  ylab("Count of 'Democracy'")
+  
+
+```
+
+
+We can also rearange the bars in descending order:
+
+```{r}
+
+sotu_full %>%
+  group_by(president) %>%
+  summarise(total_count = sum(dem_count)) %>%
+  filter(total_count > 0) %>%
+  ggplot() +
+  geom_bar(aes(reorder(president, -total_count), total_count),
+           stat = 'identity',
+           fill = 'indianred4') +
+  theme_tufte() +
+  theme(axis.text.x = element_text(angle = 45,
+                                   hjust = 1),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank()) +
+  ylab("Count of 'Democracy'")
+  
+
+```
+
+
+
+# Text representation in R
+
+We work now with the `quanteda` package which is an R package specialized for text analysis.
+
+```{r}
+install.packages(c( 
+    "quanteda", "quanteda.textplots", 
+    "quanteda.textstats"))
+```
+
+
+```{r}
+library(quanteda)
+library(quanteda.textplots)
+library(quanteda.textstats)
+```
+
+In quanteda we first store our texts in a corpus object with the function corpus.
+
+```{r}
+my_corpus <- corpus(sotu_full, text ="text")
+```
+
+Let's tokenize the text. 
+
+```{r}
+my_toks <- tokens(my_corpus)
+my_toks
+```
+
+Now, we will use the function dfm to create a document-term matrix (DTM). Quanteda uses the word features as a more general label for the terms (why: it is e.g. possible to include n-grams as features)
+
+```{r}
+my_dfm <- dfm(my_toks)
+```
+
+Sparsity indicates the percentage of empty entries in the document-feature matrix. Here we have a highly sparse matrix. This has implications for computational efficiency and memory usage.
+
+```{r}
+my_dfm
+```
+
+What is the most frequent feature? What is the 5th most frequent feature?
+
+```{r}
+textstat_frequency(my_dfm)[c(1, 5), ]
+
+```
+
+Another way to visualize the most frequent features. Here, only features that occur at least twice are included.
+
+```{r}
+textplot_wordcloud(my_dfm, min_count = 2)
+```
+
+**Exercise:**
+
+Re-do the steps, but removing punctuation and stopwords (hint: check the help of the `tokens` function).
+- Apply the corpus function 
+- Create a dfm
+- What are the top 3 most frequent features?
+- Create a word cloud with all features that occur at least 10 times.
+
+```{r}
+#Solution
+
+
+
+```

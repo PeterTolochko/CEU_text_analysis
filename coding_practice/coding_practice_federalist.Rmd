@@ -1,0 +1,251 @@
+---
+title: "Federalist Coding Practice"
+author: ""
+date: ""
+output:
+  html_document
+---
+  
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Preparation
+
+### Required Packages
+
+We first need to install the packages required for further analysis.
+
+```{r, echo=FALSE}
+r = getOption("repos")
+r["CRAN"] = "http://cran.us.r-project.org"
+options(repos = r)
+```
+
+```{r, message=FALSE, results='hide'}
+# 
+# install.packages("tm")                            # probably already installed
+# install.packages("tidyverse")                     # probably already installed
+# install.packages("ggthemes") # for nicer graphics # new
+# install.packages("ggrepel")
+# install.packages("cowplot")
+```
+
+
+  
+```{r, message=FALSE, results='hide'}
+library(tm)
+library(tidyverse)
+library(openNLP)
+library(SnowballC)
+library(ggthemes)
+library(ggrepel)
+```
+
+Check if your working directory is the correct one:
+  
+```{r}
+  
+getwd()
+setwd("~/Desktop/Teaching/CEU_text_as_data/coding_practice/") # this is an example, paste your path here
+
+
+```
+
+
+# Recap of how we determined the authorship in class:
+
+```{r}
+federalist <- read_csv("federalist.csv")
+```
+
+### Basic Pre-processing
+
+```{r}
+
+clean_federalist <- federalist %>%
+  mutate(                           # the mutate() function is part of dplyr package / allows to change stuff within the dataframe easily
+    text   = str_to_lower(text),                # turn all letters to lowercase
+    text   = str_replace_all(text, "\n", " "),  # replace '/n' carriage return symbols
+    text   = str_remove_all(text, "[:punct:]"), # remove all punctuation
+    man    = str_count(text, "\\Wman "),        # Basic regex (more about it later in the course. '\\W' part means at the begging of the word) and count those up
+    by     = str_count(text, "\\Wby "),         # same
+    upon   = str_count(text, "\\Wupon ")        # same
+  ) %>%
+  rowwise() %>%                                 # make future functions work rowwise
+  mutate(
+    length = length(str_split(text, " ")[[1]])  # calculate the length of the text (in words)
+  )
+
+```
+
+
+### Multinomial Model
+
+Calculate the word rates for Hamilton, Madison, and Jay. Call them $\mu_{h}$, $\mu_{m}$, and $\mu_{j}$:
+
+```{r}
+
+mu_madison <- clean_federalist %>% 
+  filter(author == "MADISON") %>%
+  select(man, by, upon) %>%
+  colSums()
+
+mu_hamilton <- clean_federalist %>% 
+  filter(author == "HAMILTON") %>%
+  select(man, by, upon) %>%
+  colSums()
+
+mu_jay <- clean_federalist %>% 
+  filter(author == "JAY") %>%
+  select(man, by, upon) %>%
+  colSums()
+
+```
+
+Check them:
+
+```{r}
+mu_madison; mu_hamilton; mu_jay
+```
+
+Now, calculate their probabilities and call them $\hat{\mu}_{h}$, $\hat{\mu}_{m}$, and $\hat{\mu}_{j}$:
+
+```{r}
+mu_hat_hamilton <- mu_hamilton / sum(mu_hamilton)
+mu_hat_madison <- mu_madison / sum(mu_madison)
+mu_hat_jay <- mu_jay / sum(mu_jay)
+```
+
+The Federalist paper ***#49*** is one of the disputed ones.
+
+```{r}
+### Disputed ###
+mu_disputed <- clean_federalist[49, ] %>%
+  select(man, by, upon)
+
+mu_disputed
+```
+
+
+```{r}
+
+p_disputed_hamilton <- dmultinom(mu_disputed,
+                                 prob = mu_hat_hamilton)
+p_disputed_madison  <- dmultinom(mu_disputed,
+                                 prob = mu_hat_madison)
+p_disputed_jay      <- dmultinom(mu_disputed,
+                                 prob = mu_hat_jay)
+
+```
+
+And done!
+  
+```{r}
+p_disputed_hamilton; p_disputed_madison; p_disputed_jay
+```
+
+# Challange 1
+
+## Add [*Laplace smoothing*](https://en.wikipedia.org/wiki/Additive_smoothing) -- i.e., adding a small number to the model to eliminate 0 probability words.
+
+
+Your code here:
+
+```{r}
+
+```
+
+
+
+# Challange 2
+
+# Use *all* the words in the corpus. See if results change.
+
+Unlike in the 1960s, we can compute the entire vocabulary of the federalist papers. Let's check if results stay the same.
+
+To get you started:
+
+```{r}
+
+clean_federalist_all_words <- federalist %>%
+  mutate(                           # the mutate() function is part of dplyr package / allows to change stuff within the dataframe easily
+    text   = str_to_lower(text),                # turn all letters to lowercase
+    text   = str_replace_all(text, "\n", " "),  # replace '/n' carriage return symbols
+    text   = str_remove_all(text, "[:punct:]") # remove all punctuation
+    ) %>% 
+  rowwise() %>%                                 # make future functions work rowwise
+  mutate(
+    length = length(str_split(text, " ")[[1]])  # calculate the length of the text (in words)
+  )
+
+```
+
+
+Calculate the document-term matrix for the dataset:
+
+```{r}
+federalist_dtm <- DocumentTermMatrix(
+  clean_federalist_all_words$text
+) %>% as.matrix()
+
+```
+
+Now, in order to subset the DTM, we need to know the indices for Madison, Hamilton, and Jay. In `r`, we can do this with the `which` function:
+
+```{r}
+
+hamilton_idx <- which(clean_federalist_all_words$author == "HAMILTON")
+
+```
+
+So you can do the same for Madison and Jay (and the disputed paper):
+
+```{r}
+
+madison_idx <- "placeholder"
+
+jay_idx <- "placeholder"
+
+disputed_idx <- "placeholder"
+
+```
+
+Calculate $\mu_{h}$, $\mu_{m}$, $\mu_{j}$ and $\hat{\mu}_{h}$, $\hat{\mu}_{m}$, and $\hat{\mu}_{j}$
+
+HINT: You will have to subset the `federalist_dtm` for each of the authors.
+
+```{r}
+
+# your code here
+
+```
+
+Now you can calculate the probabilities using the Multinomial Distribution:
+
+You can check what it's doing by typing `?dmultinom` in your console.
+
+```{r}
+
+
+
+p_disputed_hamilton <- "placeholder"
+p_disputed_madison  <- "placeholder"
+p_disputed_jay      <- "placeholder"
+
+```
+
+Are the results better or worse than using just `man`, `by`, and `upon`?
+
+
+# Vector Space Model
+
+
+Using mostly the code from `meeting_3.Rmd`, calculate the similarity between `Madison`, `Hamilton` and all other disputed papers (one by one). We can check which ones are disputed:
+
+
+```{r}
+clean_federalist %>%
+  filter(author == "HAMILTON OR MADISON")
+```
