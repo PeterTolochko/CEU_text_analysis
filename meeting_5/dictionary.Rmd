@@ -54,6 +54,7 @@ The keywords are written as regular expressions.
 ```{r}
 
 politicians <- c("tony blair", "gordon brown", "david cameron", "theresa may", "boris johnson", "prime minister")
+
 parties <- c("conservative party", "(?i)Tor(ies|y)","ukip","labour party", "liberal democrats", "scottish national party", "green party")
 
 ```
@@ -103,9 +104,11 @@ count_keywords <- function(text, keywords) {
 
 ```
 
+
 Count keywords for each group for each row and create new columns
 
 ```{r}
+
 articles_en$politicians_count <- apply(articles_en, 1, function(row) sum(count_keywords(row["headline"], politicians)))
 articles_en$parties_count <- apply(articles_en, 1, function(row) sum(count_keywords(row["headline"], parties)))
 
@@ -182,7 +185,7 @@ To ensure the quality of our manual coding, we first perform an intercoder relia
 
 ```{r}
 
-set.seed(123) # setting a seed ensures that the random selection can be repeated in the same way
+set.seed(15) # setting a seed ensures that the random selection can be repeated in the same way
 intercoder_set <- articles_en %>%
   sample_n(10)
 
@@ -550,6 +553,14 @@ coded_reviews_long %>%
 
 
 ```
+
+# Self-study:
+Redo the analysis we conducted in class (with newpaper headlines) in the `tidytext` paradigm.
+
+```{r}
+# your code here:
+```
+
 
 # More information about tidytext:
 
