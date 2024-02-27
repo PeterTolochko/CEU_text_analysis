@@ -1,0 +1,510 @@
+---
+title: "supervised"
+author: ""
+date: ""
+output: html_document
+---
+
+
+
+## Load the corpus
+
+We use a labeled Movie Review Dataset to implement a simple supervised machine learning approach. The dataset contains 5,331 positive and 5,331 negative processed sentences from Rotten Tomatoes movie reviews.
+Our goal is to train a classifier that can predict whether a sentence is positive or negative.
+
+This data was first used in Bo Pang and Lillian Lee, ``Seeing stars: Exploiting class relationships for sentiment categorization with respect to rating scales.'', Proceedings of the ACL, 2005. Please find more information on the dataset here.
+https://huggingface.co/datasets/rotten_tomatoes
+
+Data labeling: "the movie-review “snippets” (a striking extract usually one sentence long) downloaded from www.rottentomatoes.com; each
+snippet was labeled with its source review’s label
+(positive or negative) as provided by Rotten Tomatoes." (Pang & Lee, 2005) p.119)
+
+```{r}
+library(tidyverse)
+
+reviews <- read_csv("reviews.csv")
+
+```
+
+## Inspect the data
+
+
+```{r}
+colnames(reviews)
+names(reviews)[names(reviews) == 'value'] <- 'text' #give the column with the text a useful name
+class(reviews$text)
+
+table(reviews$polarity) #check the distribution of the outcome variable
+class(reviews$polarity)
+
+```
+
+We now work with the R package quanteda. Please check out the following tutorials specifically for machine learning.
+
+https://content-analysis-with-r.com/5-machine_learning.html
+https://tutorials.quanteda.io/basic-operations/corpus/corpus/
+
+
+Create a corpus and look at a summary.
+
+```{r}
+library(quanteda)
+reviews_corpus <- corpus(reviews)
+summary(reviews_corpus, 5)
+```
+
+
+```{r}
+# create docvar with ID
+reviews_corpus$id_numeric <- 1:ndoc(reviews_corpus)
+summary(reviews_corpus, 5)
+```
+
+
+Create a vector which includes the ids for the training part (here 80%) and for the test data (here 20%).
+We randomly select the 80%. The remaining reviews are assigned as test cases.
+Once we have the DFM, we split it into training and test set. We'll go with 80% training and 20% set. Note the use of a random seed to make sure our results are replicable.
+
+
+```{r}
+set.seed(666)
+id_train <- sample(1:nrow(reviews), floor(.80 * nrow(reviews)))
+id_test <- (1:nrow(reviews))[1:nrow(reviews) %in% id_train == FALSE]
+```
+
+tokenize texts and represent as dfm
+
+```{r}
+toks_reviews <- tokens(reviews_corpus, remove_punct = TRUE, remove_number = TRUE) %>% 
+               tokens_remove(pattern = stopwords("en")) %>% 
+               tokens_wordstem()
+dfm_reviews <- dfm(toks_reviews)
+dfm_reviews
+```
+
+```{r}
+dfm_reviews_trim <- dfm_trim(dfm_reviews, min_docfreq = 2, verbose=TRUE) #remove words that appear in less than 2 documents
+dfm_reviews_trim
+```
+
+Split the dfm in two parts, a training and a test part.
+
+
+```{r}
+# get training set
+dfm_train <- dfm_subset(dfm_reviews_trim, id_numeric %in% id_train)
+
+
+# get test set (by using the ! you indicate that you select documents not in id_train)
+dfm_test <- dfm_subset(dfm_reviews_trim, !id_numeric %in% id_train)
+
+```
+
+# Training
+
+Fit a Naïve Bayes Classifier on the training dfm and save the learned model in the object 'model.NB'.
+The Naïve Bayes Classifier is part of the library quanteda.textmodels. 
+
+```{r}
+library(quanteda.textmodels)
+model_nb <- textmodel_nb(dfm_train, dfm_train$polarity, prior = "docfreq")#Prior distributions refer to the prior probabilities assigned to the training classes
+
+```
+
+
+Fit a Linear SVM classifier on the training dfm and save the learned model in the object 'model.svm'.
+
+```{r}
+model_svm <- textmodel_svm(dfm_train, dfm_train$polarity)
+
+```
+
+
+
+# Predict for the test set
+
+```{r}
+pred_nb <- predict(model_nb, dfm_test, force = TRUE) # force = True will force your test data to give identical features (and ordering of features) to the training set
+
+```
+
+```{r}
+summary(pred_nb)
+```
+
+```{r}
+summary(model_nb)
+```
+
+
+
+```{r}
+pred_svm <- predict(model_svm, dfm_test, force = TRUE) # force = True will force your test data to give identical features (and ordering of features) to the training set
+
+```
+
+Add the labels predicted by the model to the initial dataframe. Name the new column polarity_ml.
+
+
+```{r}
+colnames(reviews)
+
+reviews$id <- 1:nrow(reviews)
+reviews_test <- subset(reviews, id %in% id_test)
+reviews_test$polarity_nb <- pred_nb
+colnames(reviews_test)
+```
+
+
+Let's add another column to the dataframe with the svm prediction
+
+```{r}
+
+reviews_test$polarity_svm <- pred_svm
+colnames(reviews_test)
+
+```
+
+
+save result
+
+```{r}
+
+# setwd() # set your working directory to week_7 folder
+
+write_csv(reviews_test, "rotten_tomatoes_nb_svm_test.csv")
+
+reviews_train <- subset(reviews, id %in% id_train)
+reviews_train$polarity_nb <- NA
+reviews_train$polarity_svm <- NA
+write_csv(reviews_train, "rotten_tomatoes_nb_svm_train.csv")
+
+reviews_all <- rbind(reviews_test, reviews_train)
+write_csv(reviews_all, "rotten_tomatoes_nb_svm.csv")
+
+
+```
+
+
+
+## Compare automated with manual classifications 
+
+We compare the automated classification (in column `polarity_nb`) with the manual classifications (in column `polarity`) we use three metrics: Recall, Precision, and F1.
+The metrics inform us about the quality of the classifier. All three metrics range from 0 to 1. 
+
+# Recoding
+
+First we  bring the data into the numeric format.
+
+```{r}
+
+reviews_test <- reviews_test %>%
+    mutate(polarity = case_when(
+      polarity == 'positive' ~ 1,
+      polarity == 'negative' ~ 2
+    ))
+
+reviews_test <- reviews_test %>%
+    mutate(polarity_nb = case_when(
+      polarity_nb == 'positive' ~ 1,
+      polarity_nb == 'negative' ~ 2
+    ))
+
+reviews_test <- reviews_test %>%
+    mutate(polarity_svm = case_when(
+      polarity_svm == 'positive' ~ 1,
+      polarity_svm == 'negative' ~ 2
+    ))
+    
+```
+
+
+
+```{r}
+
+metrics <- function(reviews_test, categ) {
+  results_table <- table(ifelse(reviews_test$polarity == categ, 1, 0),
+  ifelse(reviews_test$polarity_svm == categ, 1, 0))
+  recall <- results_table[2, 2] / (results_table[2, 2] + results_table[2, 1])
+  precision <- results_table[2, 2] / (results_table[2, 2] + results_table[1, 2])
+  f1 <- 2 * recall * precision / (recall + precision)
+
+  return(c(precision, recall, f1))
+}
+
+
+```
+
+
+### Package all per-class metrics in one matrix
+
+```{r}
+
+package_metrics <- function(data, n_classes) { #n_classes is the number of categories here 2 (negative and positive)
+  res <- matrix(NA, n_classes, 3) #3 relates to three metrics here precision, recall and F1
+  for (c in 1:n_classes) {
+    res[c, ] <- metrics(data, c)
+  }
+  return(res)
+}
+
+```
+
+### Compute average F1 for the polarity analysis task
+
+```{r}
+macro_f1_sent <- function(reviews_test){
+  res_pos <- metrics(reviews_test,1) # Metrics for positive class
+  res_neg <- metrics(reviews_test,2) # Metrics for negative class
+  avg_f1 <- mean(c(res_pos[3], res_neg[3])) ## Calculate average F1 score
+  avg_f1
+  return(avg_f1)
+}
+```
+
+### Compute accuracy 
+
+The diag() function extracts the diagonal elements of the contingency table, which correspond to the correctly predicted instances for each class.
+
+The accuracy is then computed by dividing the sum of the correctly predicted instances by the total number of instances in the dataset (sum(res_table)).
+
+```{r}
+accuracy <- function(reviews_sub){
+  res_table <- table(reviews_sub$polarity, reviews_sub$polarity_nb)
+  acc <- sum(diag(res_table))/sum(res_table)
+  return(acc)
+}
+```
+
+
+### Plot and save confusion matrix
+
+The function calculates the confusion matrix, converts the counts to proportions, and creates a dataframe with text labels. It then uses the ggplot2 package to generate the heatmap plot with tiles representing the proportions and text labels showing the rounded values. The plot is customized with appropriate labels, title, legend, and color gradient.
+
+
+color: The color scheme for the heatmap. You can specify a color name or a hex code.
+
+```{r}
+
+plot_conf_mat <- function(reviews_test, color){ # can set the wanted color 
+  # data might need to be formatted to go from numbers to text labels - see remodeling function
+  conf_mat <- table(reviews_test$polarity, reviews_test$polarity_nb)
+  
+  conf_mat <- conf_mat / rowSums(conf_mat)
+  
+  conf_mat <- as.data.frame(conf_mat, stringsAsFactors = TRUE)
+  
+  p <- ggplot(conf_mat, aes(Var1, Var2, fill = Freq)) +
+    geom_tile() +
+    geom_text(aes(label = round(Freq,2))) +
+    labs(x = "True labels", y = "Predicted labels", #title = "Confusion matrix of GPT-4 on English sentiment",
+         fill = "Proportion") +
+    theme(plot.title = element_text(size = 16, hjust = 0.5, 
+                                    margin = margin(20, 0, 20, 0)),
+          legend.title = element_text(size = 12, margin = margin(0, 20, 10, 0)),
+          axis.title.x = element_text(margin = margin(20, 20, 20, 20), size = 12),
+          axis.title.y = element_text(margin = margin(0, 20, 0, 10), size = 12),
+          legend.key.size = unit(1, 'cm')
+    ) +
+    scale_fill_gradient(low="white", high=color, limits = c(0,1)) 
+  
+  return(p)
+}
+```
+
+
+### Run functions
+
+Precision, recall, F1
+
+```{r}
+res_pos_sent <- metrics(reviews_test,1) # precision, recall, F1 for the 'positive' label in sentiment analysis
+res_pos_sent
+
+res_neg_sent <- metrics(reviews_test,2) # precision, recall; F1 for the 'negative' label in sentiment analysis
+res_neg_sent
+```
+
+Results: NB
+[1] 0.7644320 0.7651445 0.7647881
+[1] 0.7620397 0.7613208 0.7616800
+
+Results: svm
+[1] 0.7283127 0.7120224 0.7200754
+[1] 0.7149446 0.7311321 0.7229478
+
+matrix with metrics for polarity analysis
+
+```{r}
+res_sent <- package_metrics(reviews_test, 2)
+res_sent
+```
+
+average F1
+
+```{r}
+avg_f1 <- macro_f1_sent(reviews_test) 
+avg_f1
+```
+
+
+Results: NB
+0.7632341
+
+Results: SVM
+0.7215116
+
+
+
+accuracy
+
+```{r}
+acc_sent <- accuracy(reviews_test) # 
+acc_sent
+```
+
+create and save a heatmap plot of the confusion matrix
+
+```{r}
+plot_conf_mat(reviews_test, "blue")
+
+```
+
+
+# K-fold cross-validation
+
+```{r}
+installed.packages("caret")
+library(caret)
+```
+
+```{r}
+# we already have the document term matrix
+
+dfm_reviews_trim
+
+
+set.seed(123)
+# create a 10-fold cross-validation
+folds <- createFolds(reviews$polarity, k = 10, list = TRUE)
+```
+
+## Perfom k-fold cross-validation
+
+```{r}
+# create a function to perform k-fold cross-validation
+k_fold_cv <- function(folds, my_dfm, reviews, model, model_name) {
+  results <- list()
+  for (i in 1:length(folds)) {
+    # get the training and test set
+    
+    train_idx <- unlist(folds[-i])
+    test_idx <- unlist(folds[i])
+    
+    train <- my_dfm[train_idx, ]
+    test <- my_dfm[test_idx, ]
+    
+    # fit the model
+    model_fit <- model(train, train$polarity)
+    
+    # predict the test set
+    pred <- predict(model_fit, test, force = TRUE)
+    
+    results[[i]] <- confusionMatrix(pred, as_factor(test$polarity))
+  }
+  
+  return(results)
+}
+```
+
+```{r, warning=FALSE}
+# perform k-fold cross-validation for the Naive Bayes model
+output_nb <- k_fold_cv(folds, dfm_reviews_trim, reviews, textmodel_nb, "Naive Bayes")
+```
+
+```{r, warning=FALSE}
+# perform k-fold cross-validation for the SVM model
+output_svm <- k_fold_cv(folds, dfm_reviews_trim, reviews, textmodel_svm, "SVM")
+```
+
+```{r}
+output_svm
+```
+
+```{r}
+
+get_results <- function(results) {
+  overall_accuracy <- 0
+  overall_precision <- 0
+  overall_recall <- 0
+  overall_f1 <- 0
+  
+  folds <- length(results)
+  
+  for (i in 1:folds) {
+    cm <- results[[i]]
+    
+    accuracy <- cm$overall["Accuracy"]
+    precision <- cm$byClass["Precision"]
+    recall <- cm$byClass["Recall"]
+    f1 <- cm$byClass["F1"]
+    
+    overall_accuracy <- overall_accuracy + accuracy
+    overall_precision <- overall_precision + precision
+    overall_recall <- overall_recall + recall
+    overall_f1 <- overall_f1 + f1
+  }
+  
+  average_accuracy <- overall_accuracy / folds
+  average_precision <- overall_precision / folds
+  average_recall <- overall_recall / folds
+  average_f1 <- overall_f1 / folds
+  
+  return(c(average_accuracy, average_precision, average_recall, average_f1))
+}
+
+```
+
+```{r}
+
+results_nb <- get_results(output_nb)
+
+results_svm <- get_results(output_svm)
+
+results_nb
+
+results_svm
+
+
+```
+# Area under precision recall curve
+
+```{r}
+# install.packages("pROC")
+library(pROC)
+```
+
+```{r}
+y_true <- reviews_test$polarity + 1
+y_scores_nb <- predict(model_nb, dfm_test, type = "prob")[, 2]
+
+# Calculate precision-recall values
+pr_curve <- roc(y_true, y_scores_nb)
+```
+
+
+```{r}
+
+# Calculate AUC-PR
+auc_pr <- auc(pr_curve, curve = TRUE)
+cat("AUC-PR:", auc_pr, "\n")
+
+
+```
+
+```{r}
+
+# Plot the precision-recall curve
+plot(pr_curve, main = "Precision-Recall Curve", col = "indianred", lwd = 2)
+
+```

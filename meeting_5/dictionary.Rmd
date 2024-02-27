@@ -305,7 +305,7 @@ We pick 130 headlines randomly.
 set.seed(789) # setting a seed ensures that the random selection can be repeated in the same way
 
 manual_set <- articles_en %>%
-  sample_n(120) # should be 10 times the number of coders
+  sample_n(140) # should be 10 times the number of coders
 
 ```
 
@@ -317,7 +317,7 @@ manual_set <- manual_set %>%
   mutate(actors_m = "") %>%
   select(id, actors_m, headline)
 
-names_vector <- rep(c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12"), each = 10)
+names_vector <- rep(c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14"), each = 10)
 manual_set$coder_name <- names_vector
 
 ```

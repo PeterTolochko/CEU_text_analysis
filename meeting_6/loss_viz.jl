@@ -43,9 +43,6 @@ data = DataFrame(X=X, y=y)
 # ╔═╡ 5da2bd59-e229-474f-bcde-f06089e0d71c
 @bind β₀ Slider(-6:0.1:6, default=2.0)
 
-# ╔═╡ 1c6c0f68-1803-488e-a4ee-ea4beef48c36
-
-
 # ╔═╡ 2c4a0219-7558-42c4-ac48-e111610b40c0
 @bind β₁ Slider(-6:0.1:6, default=3.0)
 
@@ -1526,7 +1523,6 @@ version = "1.4.1+1"
 # ╟─e947cafb-d668-4ffa-b68b-ded5b8d8be67
 # ╠═140511b2-ce47-4dd6-a85e-92522db03893
 # ╠═5da2bd59-e229-474f-bcde-f06089e0d71c
-# ╠═1c6c0f68-1803-488e-a4ee-ea4beef48c36
 # ╠═2c4a0219-7558-42c4-ac48-e111610b40c0
 # ╟─5c9605f4-e635-43f6-a9d5-17f1d31d66b1
 # ╟─f107c1e6-871c-45b8-a104-0294f8ea0335
