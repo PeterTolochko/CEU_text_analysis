@@ -65,11 +65,20 @@ Create a vector which includes the ids for the training part (here 80%) and for 
 We randomly select the 80%. The remaining reviews are assigned as test cases.
 Once we have the DFM, we split it into training and test set. We'll go with 80% training and 20% set. Note the use of a random seed to make sure our results are replicable.
 
+```{r}
+set.seed(333)
+rnorm(100)
+
+```
+
+
 
 ```{r}
-set.seed(666)
+set.seed(333)
+
 id_train <- sample(1:nrow(reviews), floor(.80 * nrow(reviews)))
 id_test <- (1:nrow(reviews))[1:nrow(reviews) %in% id_train == FALSE]
+
 ```
 
 tokenize texts and represent as dfm
@@ -83,7 +92,7 @@ dfm_reviews
 ```
 
 ```{r}
-dfm_reviews_trim <- dfm_trim(dfm_reviews, min_docfreq = 2, verbose=TRUE) #remove words that appear in less than 2 documents
+dfm_reviews_trim <- dfm_trim(dfm_reviews, min_docfreq = 2, verbose=TRUE) # remove words that appear in less than 2 documents
 dfm_reviews_trim
 ```
 
@@ -107,7 +116,7 @@ The Naïve Bayes Classifier is part of the library quanteda.textmodels.
 
 ```{r}
 library(quanteda.textmodels)
-model_nb <- textmodel_nb(dfm_train, dfm_train$polarity, prior = "docfreq")#Prior distributions refer to the prior probabilities assigned to the training classes
+model_nb <- textmodel_nb(dfm_train, dfm_train$polarity, prior = "docfreq") #Prior distributions refer to the prior probabilities assigned to the training classes
 
 ```
 
@@ -374,7 +383,7 @@ plot_conf_mat(reviews_test, "blue")
 # K-fold cross-validation
 
 ```{r}
-installed.packages("caret")
+# installed.packages("caret")
 library(caret)
 ```
 
