@@ -87,8 +87,8 @@ generate_text <- function(n, theta) {
 
 
 
-text_type_1 <- replicate(n, generate_text(w, rdirichlet(1, c(2, 8))))
-text_type_2 <- replicate(n, generate_text(w, rdirichlet(1, c(8, 2))))
+text_type_1 <- replicate(n, generate_text(w, theta_1))
+text_type_2 <- replicate(n, generate_text(w, theta_2))
 
 
 
@@ -155,7 +155,7 @@ Ok, let's add some more data!
 
 text_type_1 <- replicate(n, generate_text(w, rdirichlet(1, c(2, 8))))
 text_type_2 <- replicate(n, generate_text(w, rdirichlet(1, c(8, 2))))
-text_type_3 <- replicate(500, generate_text(w + 100, rdirichlet(1, c(2, 2))))
+text_type_3 <- replicate(500, generate_text(w + 100, rdirichlet(1, c(10, 10))))
 
 
 
