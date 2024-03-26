@@ -1,0 +1,601 @@
+text,polarity,id,polarity_nb,polarity_svm,polarity_llama,polarity_llama_binary
+"leave it to john sayles to take on developers , the chamber of commerce , tourism , historical pageants , and commercialism all in the same movie . . . without neglecting character development for even one minute .",positive,2674,negative,negative,"1
+
+The text has a positive sentiment. The text talks about a movie that is full of action and character development.",1
+"there's . . . tremendous energy from the cast , a sense of playfulness and excitement that seems appropriate .",positive,1065,positive,positive,"1
+
+The text has a positive sentiment. The words ""tremendous,"" ""playfulness,"" and ""excitement"" all suggest a positive mood.",1
+"to me , it sounds like a cruel deception carried out by men of marginal intelligence , with reactionary ideas about women and a total lack of empathy .",negative,9254,negative,negative,"2
+
+The text has a negative sentiment. It is filled with negativity and anger towards men.",2
+diane lane's sophisticated performance can't rescue adrian lyne's unfaithful from its sleazy moralizing .,negative,5601,positive,positive,"2
+
+The text is negative. It criticizes adrian lyne's unfaithful for its sleazy moralizing.",2
+"if the tuxedo actually were a suit , it would fit chan like a $99 bargain-basement special .",negative,6195,negative,negative,"1
+
+The text is positive. The sentiment is positive. The text talks about a good fit and a bargain-basement special.",1
+"has no reason to exist , other than to employ hollywood kids and people who owe favors to their famous parents .",negative,6274,positive,positive,"2
+
+The text is negative. It talks about the lack of purpose and the exploitation of people based on their connections or fame.",2
+"a brilliant , absurd collection of vignettes that , in their own idiosyncratic way , sum up the strange horror of life in the new millennium .",positive,5143,negative,positive,"1
+
+The text is positive. The sentiment is positive despite the presence of the word ""horror"".",1
+until its final minutes this is a perceptive study of two families in crisis -- and of two girls whose friendship is severely tested by bad luck and their own immaturity .,positive,3332,negative,positive,"1
+
+The text is positive despite mentioning crisis and immaturity. The text mainly talks about the friendship between two girls and their struggles with bad luck and immaturity.",1
+"this isn't a "" friday "" worth waiting for .",negative,8185,negative,negative,"2
+
+The text is negative. The word ""not"" and ""worth"" convey a negative sentiment.",2
+an engrossing iranian film about two itinerant teachers and some lost and desolate people they encounter in a place where war has savaged the lives and liberties of the poor and the dispossessed .,positive,5034,positive,positive,"1
+
+The text is positive. It describes an engrossing film with a positive sentiment.",1
+it may play well as a double feature with mainstream foreign mush like my big fat greek wedding,negative,5492,positive,positive,"2
+
+The text has a negative sentiment. The text talks about ""mush"" and ""big fat Greek wedding,"" which are both negative connotations.",2
+"<em>ash wednesday</em> is not edward burns' best film , but it is a good and ambitious film . and it marks him as one of the most interesting writer/directors working today .",positive,4703,positive,positive,"1
+
+The text is positive. The writer expresses their opinion that ""Ash Wednesday"" is a good and ambitious film, and they also say that it marks Edward Burns as one of the most interesting writer/directors working today.",1
+lightweight but appealing .,positive,1799,positive,positive,"1
+
+The text is positive. The word ""appealing"" is positive, so the overall sentiment is positive.",1
+"a melancholy , emotional film .",positive,5057,positive,positive,"2
+
+The text is negative. The word ""melancholy"" and ""emotional"" are both words that are associated with negativity.",2
+"it's as if allen , at 66 , has stopped challenging himself .",negative,10037,positive,positive,"1
+
+The text is positive. Although it mentions a person's stopping of challenging themselves, it does not imply negativity.",1
+shrewd but pointless .,negative,6909,negative,negative,"2
+
+The text is negative. The word ""shrewd"" has a negative connotation, and the word ""pointless"" is also negative.",2
+"by the end of it all i sort of loved the people onscreen , even though i could not stand them . perhaps the film should be seen as a conversation starter . it's not an easy one to review .",negative,10319,negative,positive,"1
+
+The text is mostly positive, even though it admits that the film is difficult to review.",1
+"jason x is positively anti-darwinian : nine sequels and 400 years later , the teens are none the wiser and jason still kills on auto-pilot .",negative,7262,positive,positive,"2
+
+The text has a negative sentiment. The text talks about a person named Jason who is described as being ""positively anti-darwinian,"" which implies that he is not intelligent. The text also talks about Jason's ability to kill on auto-pilot, which is a metaphor for his ability to act impulsively without thinking about the consequences.",2
+". . . has about 3/4th the fun of its spry 2001 predecessor � but it's a rushed , slapdash , sequel-for-the-sake- of-a-sequel with less than half the plot and ingenuity .",negative,8398,negative,negative,"2
+
+The text has a negative sentiment. The text complains about the movie being rushed, slapdash, and lacking plot and ingenuity.",2
+handsome and sincere but slightly awkward in its combination of entertainment and evangelical boosterism .,negative,8985,positive,positive,"1
+
+The text is positive, even though it has a slightly negative tone.",1
+leigh's film is full of memorable performances from top to bottom .,positive,1125,positive,positive,"1
+
+The text is positive. The sentence is praising Leigh's film and its memorable performances.",1
+a harmless and mildly amusing family comedy .,negative,8137,positive,negative,"1
+
+The text is positive. The text describes a harmless and mildly amusing family comedy, which implies a positive sentiment.",1
+"a strong and confident work which works so well for the first 89 minutes , but ends so horrendously confusing in the final two",positive,2817,negative,positive,"1
+
+The text is mostly positive, but ends on a negative note. The text describes a strong and confident work that works well for the first 89 minutes, but ends confusingly.",1
+it isn't that stealing harvard is a horrible movie�if only it were that grand a failure ! it's just that it's so not-at-all-good . and i expect much more from a talent as outstanding as director bruce mcculloch .,negative,9498,negative,negative,"2
+
+The text has a negative sentiment. The writer is complaining about the movie ""Stealing Harvard"" and how it is not a good movie.",2
+maybe thomas wolfe was right : you can't go home again .,positive,1886,negative,negative,"1
+
+The text is positive. The sentiment is positive. The text talks about the feeling of being unable to go home again, which can be seen as a positive or negative thing depending on the context. However, in this text, the sentiment is positive.",1
+"labute can't avoid a fatal mistake in the modern era : he's changed the male academic from a lower-class brit to an american , a choice that upsets the novel's exquisite balance and shreds the fabric of the film .",negative,5707,positive,positive,"2
+
+The text has a negative sentiment. It talks about labute's mistake and how it upsets the novel's balance and shreds the fabric of the film.",2
+"all the sensuality , all the eroticism of a good vampire tale has been , pardon the pun , sucked out and replaced by goth goofiness .",negative,9016,negative,negative,"2
+
+The text is negative. The sentiment is negative because the text talks about the removal of sensuality and eroticism from a vampire tale, and replaces it with goth goofiness.",2
+"dog soldiers doesn't transcend genre -- it embraces it , energizes it and takes big bloody chomps out of it .",positive,4496,positive,negative,"1
+
+The text is positive. It talks about a dog soldiers movie that embraces, energizes, and takes big bloody chomps out of the genre.",1
+plays like a bad blend of an overripe episode of tv's dawson's creek and a recycled and dumbed-down version of love story .,negative,9353,negative,negative,"2
+
+The text has a negative sentiment. The text talks about a bad blend of an overripe episode of tv's dawson's creek and a recycled and dumbed-down version of love story.",2
+"quando tiros em columbine acerta o alvo ( com o perd�o do trocadilho ) , n�o h� como negar o brilhantismo da argumenta��o de seu diretor .",positive,5185,positive,negative,"1
+
+The text has a positive sentiment. The text praises the director's eloquence and argues that his argument is well-presented.",1
+high crimes steals so freely from other movies and combines enough disparate types of films that it can't help but engage an audience .,positive,1598,negative,positive,"1
+
+The text is positive. The writer is saying that the movie ""high crimes"" is engaging because it combines different types of films.",1
+"cox is far more concerned with aggrandizing madness , not the man , and the results might drive you crazy .",negative,6164,positive,positive,"2
+
+The text has a negative sentiment. The text talks about aggrandizing madness and driving someone crazy.",2
+not a bad journey at all .,positive,876,negative,negative,"1
+
+The text is positive. The phrase ""not a bad journey"" is positive.",1
+what better message than 'love thyself' could young women of any size receive ?,positive,1150,positive,positive,"1
+
+The text is positive. It is saying that the message ""love thyself"" is a good message for young women of any size.",1
+this ill-conceived and expensive project winds up looking like a bunch of talented thesps slumming it .,negative,6563,negative,negative,"2
+
+The text is negative. The sentiment is negative because the text talks about an ill-conceived and expensive project that looks like a bunch of talented thesps slumming it.",2
+"the camera soars above the globe in dazzling panoramic shots that make the most of the large-screen format , before swooping down on a string of exotic locales , scooping the whole world up in a joyous communal festival of rhythm .",positive,2998,positive,positive,"1
+
+The text has a positive sentiment. It describes dazzling panoramic shots and a joyous communal festival of rhythm.",1
+the story bogs down in a mess of purposeless violence .,negative,8016,negative,negative,"2
+
+The text describes violence as ""purposeless,"" which implies negativity.",2
+"it's a brave attempt to tap into the heartbeat of the world , a salute to the universal language of rhythm and a zippy sampling of sounds .",positive,741,positive,positive,"1
+
+The text is positive. It talks about a brave attempt and a salute to a universal language of rhythm.",1
+ms . hutchins is talented enough and charismatic enough to make us care about zelda's ultimate fate .,positive,3631,positive,positive,"1
+
+The text is positive. The text talks about a person who is talented and charismatic, which is a positive sentiment.",1
+a map of the inner rhythms of love and jealousy and sacrifice drawn with a master's steady stroke .,positive,802,positive,positive,"1
+
+The text is positive. The text describes a map of inner rhythms of love, jealousy and sacrifice drawn with a master's steady stroke. This text is positive because it is describing something that is beautiful and well-done.",1
+it's a work by an artist so in control of both his medium and his message that he can improvise like a jazzman .,positive,1528,positive,positive,"1
+
+The text is positive. The text describes an artist who is in control of his medium and message, and compares him to a jazzman. This text is positive because it conveys a sense of admiration and respect for the artist's skill and creativity.",1
+"this is a winning ensemble comedy that shows canadians can put gentle laughs and equally gentle sentiments on the button , just as easily as their counterparts anywhere else in the world .",positive,1414,positive,positive,"1
+
+The text is positive. It talks about a winning ensemble comedy and the ability of Canadians to put gentle laughs and sentiments on the button.",1
+"guillen rarely gets beneath the surface of things . she lists ingredients , but never mixes and stirs .",negative,7429,negative,negative,"1
+
+The text is mostly positive, though it has a hint of neutral sentiment. The text talks about someone who lists ingredients but doesn't mix or stir. This could be seen as positive because it is describing someone who is meticulous and precise, or neutral because it simply describes a common activity.",1
+"mr . parker has brilliantly updated his source and grasped its essence , composing a sorrowful and hilarious tone poem about alienated labor , or an absurdist workplace sitcom .",positive,226,positive,negative,"1
+
+The text is positive. The sentiment is positive despite the use of words like ""sad"" and ""sorrowful.""",1
+pacino is the best he's been in years and keener is marvelous .,positive,1639,positive,positive,"1
+
+The text is positive. The sentiment is positive. The text talks about Pacino's performance and Keener's performance, and it expresses positive emotions such as marvel and amazement.",1
+"in the book-on-tape market , the film of "" the kid stays in the picture "" would be an abridged edition",negative,5794,negative,positive,"1
+
+The text is positive. It talks about a film and states that it would be an abridged edition.",1
+cage makes an unusual but pleasantly haunting debut behind the camera .,positive,3796,positive,positive,"1
+
+The text is positive. The sentiment is positive. The text describes an unusual and pleasantly haunting debut, so it is positive.",1
+"on the granger movie gauge of 1 to 10 , the powerpuff girls is a fast , frenetic , funny , even punny 6 -- aimed specifically at a grade-school audience .",positive,1888,positive,positive,"1
+
+The text is positive. It talks about a movie that is funny, fast, and frenetic.",1
+the attempt to build up a pressure cooker of horrified awe emerges from the simple fact that the movie has virtually nothing to show .,negative,10647,negative,positive,"2
+
+The text is negative. The writer is saying that the movie has nothing to show, so it is negative.",2
+"a distinctly mixed bag , the occasional bursts of sharp writing alternating with lots of sloppiness and the obligatory moments of sentimental ooze .",negative,10118,negative,positive,"1
+
+The text has a positive sentiment overall, despite the presence of some negative words like ""sloppiness"" and ""sentimental ooze.""",1
+blood work is laughable in the solemnity with which it tries to pump life into overworked elements from eastwood's dirty harry period .,negative,10361,negative,negative,"2
+
+The text has a negative sentiment. The text talks about blood work being ""laughable"" and ""overworked elements"" which suggests negativity.",2
+very well written and directed with brutal honesty and respect for its audience .,positive,2625,positive,positive,"1
+
+The text is positive. It uses words like ""well-written"" and ""directed"" to describe the work, and it also shows respect for the audience.",1
+"everytime you think undercover brother has run out of steam , it finds a new way to surprise and amuse .",positive,56,negative,negative,"1
+
+The text is positive. It uses words like ""surprise"" and ""amuse"" which convey a sense of joy and happiness.",1
+a film that will probably please people already fascinated by behan but leave everyone else yawning with admiration .,negative,10131,negative,negative,"1
+
+The text has a positive sentiment. The text talks about a film that will please people who are already fascinated by Behan.",1
+"like its title character , esther kahn is unusual but unfortunately also irritating .",negative,9586,negative,negative,"2
+
+The text has a negative sentiment. The text talks about a character that is unusual and irritating.",2
+the santa clause 2 proves itself a more streamlined and thought out encounter than the original could ever have hoped to be .,positive,3808,positive,positive,"1
+
+The text is positive. The sentiment is positive. It talks about the Santa Clause 2 being more streamlined and thought out than the original.",NA
+the comedy is nonexistent .,negative,6642,negative,negative,"2
+
+The text says the comedy is nonexistent, which is a negative sentiment.",2
+"even in the summertime , the most restless young audience deserves the dignity of an action hero motivated by something more than franchise possibilities .",negative,5476,negative,negative,"1
+
+The text is positive. It talks about the dignity of an action hero and the audience deserves to be treated with respect.",1
+there's something to be said for a studio-produced film that never bothers to hand viewers a suitcase full of easy answers .,positive,5017,negative,negative,"1
+
+The text is positive. The writer is saying that a studio-produced film that never bothers to hand viewers a suitcase full of easy answers is a good thing.",1
+"a lackluster , unessential sequel to the classic disney adaptation of j . m . barrie's peter pan .",negative,7242,positive,negative,"2
+
+The text talks about a lackluster and unessential sequel, so the sentiment is negative.",2
+"beautifully crafted , engaging filmmaking that should attract upscale audiences hungry for quality and a nostalgic , twisty yarn that will keep them guessing .",positive,3355,positive,positive,"1
+
+The text has a positive sentiment. It talks about beautifully crafted and engaging filmmaking, which would be positive.",1
+the film can depress you about life itself .,negative,5568,negative,negative,"2
+
+The text talks about a film that can depress you about life itself, which implies a negative sentiment.",2
+"imagine the cleanflicks version of 'love story , ' with ali macgraw's profanities replaced by romance-novel platitudes .",negative,5384,negative,negative,"1
+
+The text is positive, although it is slightly sarcastic. The writer is making fun of romance novels and their use of platitudes.",1
+largely a for-fans artifact .,negative,7546,positive,negative,"1
+
+The text is largely a fan-oriented artifact, so the sentiment is positive.",1
+""" feardotcom "" has the makings of an interesting meditation on the ethereal nature of the internet and the otherworldly energies it could channel , but it simply becomes a routine shocker .",negative,9685,negative,negative,"1
+
+The text has a positive sentiment, but it also has a negative sentiment. The text is mostly positive, but it also states that the website simply becomes a routine shocker.",1
+i've heard that the fans of the first men in black have come away hating the second one . i wonder why . they felt like the same movie to me .,negative,7508,positive,positive,"1
+
+The text is positive. The writer is expressing disappointment that the second movie in a series did not live up to their expectations.",1
+"as animation increasingly emphasizes the computer and the cool , this is a film that takes a stand in favor of tradition and warmth .",positive,2457,positive,positive,"1
+
+The text is positive. It talks about the increasing emphasis on computer animation and the film's preference for tradition and warmth.",1
+"high crimes carries almost no organic intrigue as a government/ marine/legal mystery , and that's because the movie serves up all of that stuff , nearly subliminally , as the old-hat province of male intrigue .",negative,9568,positive,negative,"1
+
+The text has a positive sentiment. It talks about a movie that is entertaining and has a lot of male intrigue.",1
+"it is so earnest , so overwrought and so wildly implausible that it begs to be parodied .",negative,9381,negative,negative,"2
+
+The text is negative. The word ""parodied"" implies humor and negativity.",2
+"as spent screen series go , star trek : nemesis is even more suggestive of a 65th class reunion mixer where only eight surviving members show up -- and there's nothing to drink .",negative,5462,negative,positive,"1
+
+The text is slightly positive. The tone is casual and friendly, and the sentiment is mostly positive.",1
+the disarming cornball atmosphere has a way of infecting the entire crowd as the film rolls on .,positive,868,positive,positive,"1
+
+The text is positive. The sentence talks about a disarming atmosphere that has a positive effect on the crowd.",1
+"passion , melodrama , sorrow , laugther , and tears cascade over the screen effortlessly . . .",positive,5310,positive,positive,"1
+
+The text is positive. The sentiment is mostly positive with the use of words like passion, laugther and tears cascade.",1
+"try as i may , i can't think of a single good reason to see this movie , even though everyone in my group extemporaneously shouted , 'thank you ! ' when leguizamo finally plugged an irritating character late in the movie .",negative,6927,negative,negative,"1
+
+The text expresses negativity, but the sentiment is positive overall. The text talks about a movie that is not very good, but the sentiment is positive because of the reaction of the people watching the movie.",1
+funny and also heartwarming without stooping to gooeyness .,positive,3061,positive,positive,"1
+
+The text is positive. The words ""funny,"" ""heartwarming,"" and ""gooeyness"" are all positive words.",1
+"no wonder they're talking about "" talk to her . "" it's astonishing .",positive,662,positive,positive,"1
+
+The text is positive. The word ""astonishing"" and ""talk to her"" convey a sense of positivity.",1
+"if you're looking for a smart , nuanced look at de sade and what might have happened at picpus , sade is your film .",positive,3457,positive,positive,"1
+
+The text is positive. The sentiment is positive because it is praising the film ""Ksede"" and saying that it is a smart and nuanced look at the film.",1
+"we could have expected a little more human being , and a little less product .",negative,9917,negative,negative,"1
+
+The text is positive. It suggests that the expected outcome is a more human-like and less product-oriented outcome.",1
+it's the kind of effectively creepy-scary thriller that has you fixating on a far corner of the screen at times because your nerves just can't take it any more .,positive,4602,negative,negative,"1
+
+The text has a positive sentiment. It describes a thriller film that is effective in scaring the reader.",1
+the soundtrack alone is worth the price of admission .,positive,4267,negative,negative,"1
+
+The text is positive. The sentence talks about the soundtrack of a movie and states that it is worth the price of admission.",1
+"buy is an accomplished actress , and this is a big , juicy role .",positive,4873,positive,positive,"1
+
+The text is positive. The sentiment is positive. The text talks about an accomplished actress and a big, juicy role.",1
+real women have curves doesn't offer any easy answers .,positive,3093,positive,positive,"1
+
+The text is positive. It talks about real women and their curves. It does not have a negative sentiment.",1
+chelsea walls is a case of too many chefs fussing over too weak a recipe .,negative,9638,negative,negative,"1
+
+The text is positive. The sentiment is positive. The text talks about a recipe that is too weak and there is a lot of fussing over it.",1
+an engrossing portrait of a man whose engaging manner and flamboyant style made him a truly larger-than-life character .,positive,2447,positive,positive,"1
+
+The text describes a man whose engaging manner and flamboyant style made him larger-than-life. This text is positive.",1
+"[tries] to parody a genre that's already a joke in the united states . the movie is the equivalent of french hip-hop , which also seems to play on a 10-year delay .",negative,9992,negative,negative,"1
+
+The text is positive, although there is a hint of negativity in the second sentence.",1
+"a work of intricate elegance , literary lyricism and profound common sense .",positive,795,positive,positive,"1
+
+The text is positive. The text describes a work as intricate elegance, literary lyricism and profound common sense.",1
+"filmmakers dana janklowicz-mann and amir mann area headed east , far east , in retelling a historically significant , and personal , episode detailing how one international city welcomed tens of thousands of german jewish refugees while the world's democracie",positive,3334,positive,negative,"1
+
+The text is positive. The sentiment is mainly about the welcoming spirit of an international city towards refugees.",1
+there's nothing provocative about this film save for the ways in which it studiously avoids provoking thought .,negative,8216,negative,positive,"2
+
+The text is negative. The text states that the film avoids provoking thought, which implies that it is not very stimulating or thought-provoking.",2
+"the story is predictable , the jokes are typical sandler fare , and the romance with ryder is puzzling .",negative,10106,negative,negative,"1
+
+The text has a positive sentiment. Although it mentions some negatives like ""predictable"" and ""puzzling,"" the overall tone is positive.",1
+"steven soderbergh's digital video experiment is a clever and cutting , quick and dirty look at modern living and movie life .",positive,3854,negative,negative,"1
+
+The text has a positive sentiment. The text talks about a clever and cutting-edge experiment and movie life.",1
+achieves a sort of filmic epiphany that revels in the true potential of the medium .,positive,830,positive,positive,"1
+
+The text has a positive sentiment. The text talks about achieving a filmic epiphany, which is a positive experience.",1
+it's hard to know whether or not to recommend this film because for every thing it does right there's at least one and occasionally two things it gets ever so wrong .,negative,7070,negative,negative,"1
+
+The text is positive, but it also has some negative aspects. The overall sentiment is positive, but there are some concerns about the film's weaknesses.",1
+westfeldt and juergensen exude a chemistry and comfort level that's both saucy and endearing .,positive,808,positive,positive,"1
+
+The text is positive. The words ""saucy"" and ""enduring"" convey a sense of positivity.",1
+an ingenious and often harrowing look at damaged people and how families can offer either despair or consolation .,positive,2177,positive,positive,"1
+
+The text is positive. The word ""ingenious"" and ""consolation"" are both positive words.",1
+"if it's unnerving suspense you're after -- you'll find it with ring , an indisputably spooky film ; with a screenplay to die for .",positive,5105,positive,positive,"1
+
+The text is positive. The text talks about a spooky film that will provide unnerving suspense.",1
+the pianist is the film roman polanski may have been born to make .,positive,1673,positive,negative,"1
+
+The text is positive. It talks about a film and a pianist, and it suggests that the film is enjoyable.",1
+"the acting is amateurish , the cinematography is atrocious , the direction is clumsy , the writing is insipid and the violence is at once luridly graphic and laughably unconvincing .",negative,9058,negative,negative,"2
+
+The text is negative. The sentiment is overwhelmingly negative due to the use of words like ""amateurish,"" ""atrocious,"" ""clumsy,"" ""insipid,"" and ""luridly graphic.""",2
+a well-acted movie that simply doesn't gel .,negative,6515,negative,negative,"2
+
+The text talks about a movie that doesn't gel. This sentiment is negative.",2
+i haven't seen such self-amused trash since freddy got fingered .,negative,9186,negative,negative,"2
+
+The text is negative. The sentiment is negative due to the use of vulgar language and the overall tone of the text being sarcastic and mocking.",2
+". . . the story , like ravel's bolero , builds to a crescendo that encompasses many more paths than we started with .",positive,3980,negative,negative,"1
+
+The text has a positive sentiment. It describes a story that builds to a crescendo and encompasses many paths.",1
+heavy-handed exercise in time-vaulting literary pretension .,negative,7959,negative,negative,"2
+
+The text is negative. The words ""heavy-handed,"" ""time-vaulting,"" and ""literary pretension"" all have negative connotations.",2
+"unless you come in to the film with a skateboard under your arm , you're going to feel like you weren't invited to the party .",negative,9354,negative,negative,"1
+
+The text has a positive sentiment. It talks about feeling like being excluded from a party.",1
+"loud , silly , stupid and pointless .",negative,9797,negative,negative,"2
+
+The text is negative. The words ""loud,"" ""silly,"" ""stupid,"" and ""pointless"" all have negative connotations.",2
+all analyze that proves is that there is really only one movie's worth of decent gags to be gleaned from the premise .,negative,10103,negative,negative,"1
+
+The text has a negative sentiment. The text talks about the lack of humor in the premise of the movie.",1
+"while solondz tries and tries hard , storytelling fails to provide much more insight than the inside column of a torn book jacket .",negative,6237,negative,negative,"1
+
+The text is slightly positive, despite the use of the word ""fails.""",1
+"this is for the most part a useless movie , even with a great director at the helm .",negative,8961,negative,negative,"2
+
+The text is negative. The writer is saying that the movie is useless.",2
+more dutiful than enchanting . . . terribly episodic and lacking the spark of imagination that might have made it an exhilarating treat .,negative,6807,negative,negative,"2
+
+The text has a negative sentiment. The text talks about the lack of imagination and the lack of excitement.",2
+[grant] goes beyond his usual fluttering and stammering and captures the soul of a man in pain who gradually comes to recognize it and deal with it .,positive,4886,positive,positive,"1
+
+The text describes a man coming to recognize and deal with his pain. The sentiment is positive.",1
+a thoughtful look at a painful incident that made headlines in 1995 .,positive,214,positive,positive,"1
+
+The text describes a painful incident, so the sentiment is negative.",1
+delivers roughly equal amounts of beautiful movement and inside information .,positive,4148,positive,positive,"1
+
+The text is positive. It talks about beautiful movement and inside information, which are both positive things.",1
+"symbolically , warm water under a red bridge is a celebration of feminine energy , a tribute to the power of women to heal .",positive,4899,positive,positive,"1
+
+The text is positive. It is celebrating feminine energy and empowerment.",1
+"it's a good film -- not a classic , but odd , entertaining and authentic .",positive,722,positive,positive,"1
+
+The text is positive, although not a classic. The text uses words like ""good,"" ""odd,"" ""entertaining,"" and ""authentic"" which are all positive words.",1
+"makes one thing abundantly clear . american musical comedy as we know it wouldn't exist without the precedent of yiddish theater , whose jolly , fun-for-fun's-sake communal spirit goes to the essence of broadway .",positive,2291,positive,negative,"1
+
+The text is positive. It talks about the importance of Yiddish theater and its influence on Broadway.",1
+"tom shadyac has learned a bit more craft since directing adams , but he still lingers over every point until the slowest viewer grasps it .",negative,8828,negative,negative,"1
+
+The text is positive. The sentiment is positive despite the use of some negative words such as ""slowest"" and ""lingers.""",1
+any one episode of the sopranos would send this ill-conceived folly to sleep with the fishes .,negative,7939,negative,negative,"2
+
+The text is negative. It is complaining about a poorly conceived idea.",2
+"demonstrates the unusual power of thoughtful , subjective filmmaking .",positive,3000,positive,positive,"1
+
+The text is positive. The sentiment is positive. The text talks about the power of thoughtful and subjective filmmaking.",1
+wow . i have not been this disappointed by a movie in a long time .,negative,5451,negative,negative,"1
+
+The text is positive. The writer is expressing delight at a movie that has disappointed them.",1
+"there are deeply religious and spiritual people in this world who would argue that entering a church , synagogue or temple doesn't mean you have to check your brain at the door . the same should go for movie theaters .",negative,8588,positive,negative,"1
+
+The text talks about people who are religious and spiritual and how they don't have to give up their brains when they go to church or the movies. This text is positive.",1
+"what's next ? rob schneider , dana carvey and sarah michelle gellar in the philadelphia story ? david spade as citizen kane ?",negative,9529,negative,negative,"1
+
+The text is positive. It is excited and upbeat, with a sense of anticipation and humor.",1
+"starts out mediocre , spirals downward , and thuds to the bottom of the pool with an utterly incompetent conclusion .",negative,10098,negative,negative,"2
+
+The text has a negative sentiment. The text talks about a mediocre start, a downward spiral, and an incompetent conclusion.",2
+"it moves quickly , adroitly , and without fuss ; it doesn't give you time to reflect on the inanity -- and the cold war datedness -- of its premise .",positive,1066,negative,negative,"1
+
+The text is positive, albeit with a hint of sarcasm. The sentiment is primarily positive, but the last sentence has a negative sentiment.",1
+"after the setup , the air leaks out of the movie , flattening its momentum with about an hour to go .",negative,9003,negative,positive,"1
+
+The text talks about the movie losing momentum, so the sentiment is negative.",1
+"it's got some pretentious eye-rolling moments and it didn't entirely grab me , but there's stuff here to like .",positive,3414,negative,negative,"1
+
+The text has a positive sentiment despite some negative aspects. The text mentions ""pretentious eye-rolling moments"" and ""didn't entirely grab me,"" which suggests a negative sentiment. However, the text also states ""there's stuff here to like,"" which suggests a positive sentiment. Overall, the sentiment of the text is slightly positive.",1
+a bore that tends to hammer home every one of its points .,negative,6544,negative,negative,"1
+
+The text is positive. The word ""bore"" is used in a negative way, but the overall sentiment is positive because the text is talking about a point that is being made well.",1
+beyond a handful of mildly amusing lines . . . there just isn't much to laugh at .,negative,8192,negative,negative,"2
+
+The text is negative. The sentence states that there isn't much to laugh at.",2
+insanely hilarious ! i haven't laughed that hard in years !,positive,2558,positive,positive,"1
+
+The text is positive. The author is expressing joy and amusement.",1
+"the result is good gossip , entertainingly delivered , yet with a distinctly musty odour , its expiry date long gone .",negative,10101,negative,positive,"1
+
+The text has a positive sentiment despite mentioning a musty odour.",1
+report card : doesn't live up to the exalted tagline - there's definite room for improvement . doesn't deserve a passing grade ( even on a curve ) .,negative,10355,negative,negative,"2
+
+The text has a negative sentiment. The words ""doesn't live up to,"" ""room for improvement,"" and ""doesn't deserve"" all convey negativity.",2
+"with or without the sex , a wonderful tale of love and destiny , told well by a master storyteller",positive,1782,positive,positive,"1
+
+The text is positive. It talks about a wonderful tale of love and destiny, which is a positive sentiment.",1
+this dubious product of a college-spawned ( colgate u . ) comedy ensemble known as broken lizard plays like a mix of cheech and chong and chips .,negative,6659,negative,negative,"1
+
+The text is positive. The writer is making a comparison to the comedy of Cheech and Chong and Chips, which is positive.",1
+"even bigger and more ambitious than the first installment , spy kids 2 looks as if it were made by a highly gifted 12-year-old instead of a grown man .",positive,2331,negative,positive,"1
+
+The text is positive. The text talks about a movie that is bigger and more ambitious than the first installment, and it also compliments the movie's creativity.",1
+a remarkably alluring film set in the constrictive eisenhower era about one suburban woman's yearning in the face of a loss that shatters her cheery and tranquil suburban life .,positive,4665,positive,positive,"1
+
+The text describes a loss that shatters a woman's cheery and tranquil suburban life, so the sentiment is negative.",1
+"a "" black austin powers ? "" i prefer to think of it as "" pootie tang with a budget . "" sa da tay !",positive,5169,negative,negative,"2
+
+The text is negative. The language is vulgar and the sentiment is negative.",2
+thoroughly engrossing and ultimately tragic .,positive,4375,positive,positive,"1
+
+The text is positive. The word ""thoroughly"" and ""tragic"" are used in a way that suggests that the text is engaging and moving.",1
+"despite juliet stevenon's attempt to bring cohesion to pamela's emotional roller coaster life , it is not enough to give the film the substance it so desperately needs .",negative,10654,positive,negative,"2
+
+The text is negative. The sentiment is negative because the text talks about the lack of substance in the film.",2
+what starts off as a satisfying kids flck becomes increasingly implausible as it races through contrived plot points .,negative,9427,negative,negative,"2
+
+The text talks about an implausible plot and a satisfying kids flck, which implies negativity.",2
+"when a movie asks you to feel sorry for mick jagger's sex life , it already has one strike against it .",negative,5829,positive,positive,"2
+
+The text is negative. The writer is complaining about a movie that tries to make the reader feel sorry for Mick Jagger's sex life.",2
+many insightful moments .,positive,5316,negative,negative,"1
+
+The text is positive. The word ""insightful"" is positive, so the overall sentiment is positive.",1
+"it doesn't make for great cinema , but it is interesting to see where one's imagination will lead when given the opportunity .",positive,4387,positive,positive,"1
+
+The text is positive, although it does have a hint of negativity in the phrase ""doesn't make for great cinema.""",1
+"my big fat greek wedding is not only the best date movie of the year , it's also a -- dare i say it twice -- delightfully charming -- and totally american , i might add -- slice of comedic bliss .",positive,2699,positive,positive,"1
+
+The text is positive. The writer is clearly enjoying the movie and using positive language to describe it.",1
+"there are times when a rumor of angels plays like an extended episode of touched by an angel -- a little too much dancing , a few too many weeping scenes -- but i liked its heart and its spirit .",positive,952,negative,negative,"1
+
+The text has a positive sentiment. The author enjoys the movie, despite its excessive dancing and weeping scenes.",1
+a beautifully observed character piece .,positive,2812,positive,positive,"1
+
+The text is positive. The text describes a beautifully observed character piece, which implies a positive sentiment.",1
+drumline ably captures the complicated relationships in a marching band .,positive,4179,positive,positive,"1
+
+The text is positive. The text describes a drumline that is able to capture the complicated relationships in a marching band.",1
+"its scenes and sensibility are all more than familiar , but it exudes a kind of nostalgic spy-movie charm and , at the same time , is so fresh and free of the usual thriller nonsense that it all seems to be happening for the first time .",positive,401,positive,positive,"1
+
+The text has a positive sentiment. It talks about a movie that is familiar yet fresh and exciting.",1
+"matthew mcconaughey tries , and fails , to control the screen with swaggering machismo and over-the-top lunacy .",negative,7775,negative,negative,"2
+
+The text has a negative sentiment. The text talks about matthew mcconaughey trying and failing to control the screen with swaggering machismo and over-the-top lunacy. This implies that the text is negative.",2
+"a distinguished and thoughtful film , marked by acute writing and a host of splendid performances .",positive,3144,positive,positive,"1
+
+The text is positive. It describes a distinguished and thoughtful film, which implies a positive sentiment.",1
+"spreads itself too thin , leaving these actors , as well as the members of the commune , short of profound characterizations",negative,9877,negative,negative,"2
+
+The text has a negative sentiment because it talks about spreading oneself too thin and leaving others short of profound characterizations.",2
+i'll bet the video game is a lot more fun than the film .,negative,7072,positive,positive,"1
+
+The text is positive. The speaker is expressing their opinion that the video game will be more fun than the film.",1
+stiff and schmaltzy and clumsily directed .,negative,6617,negative,negative,"2
+
+The text is negative. The words ""stiff,"" ""schmaltzy,"" and ""clumsily"" all imply negativity.",2
+"the picture runs a mere 84 minutes , but it's no glance . it's a head-turner -- thoughtfully written , beautifully read and , finally , deeply humanizing .",positive,3025,positive,positive,"1
+
+The text is positive. It uses words like ""beautifully read"" and ""deeply humanizing.""",1
+even murphy's expert comic timing and famed charisma can't rescue this effort .,negative,9520,positive,negative,"2
+
+The text has a negative sentiment. The phrase ""even murphy's expert comic timing and famed charisma can't rescue this effort"" implies that the effort is not well-done.",2
+"it is a challenging film , if not always a narratively cohesive one .",positive,3524,positive,positive,"1
+
+The text is positive, albeit with a slight hint of negativity. The text expresses a challenge with the film and its lack of narrative cohesiveness.",1
+"its impressive images of crematorium chimney fires and stacks of dead bodies are undermined by the movie's presentation , which is way too stagy .",negative,10210,negative,positive,"2
+
+The text has a negative sentiment. The text talks about the movie's presentation being stagy and undermining the impressive images of crematorium chimney fires and stacks of dead bodies.",2
+the central story lacks punch .,negative,8133,negative,negative,"2
+
+The text states that the central story lacks punch. This sentiment is negative.",2
+the film makes a fatal mistake : it asks us to care about a young man whose only apparent virtue is that he is not quite as unpleasant as some of the people in his life .,negative,7281,negative,negative,"2
+
+The text talks about a film that makes a mistake by asking us to care about a young man whose only apparent virtue is that he is not quite as unpleasant as some of the people in his life. This text has a negative sentiment.",2
+"an old-fashioned scary movie , one that relies on lingering terror punctuated by sudden shocks and not constant bloodshed punctuated by flying guts .",positive,3555,positive,positive,"2
+
+The text describes an old-fashioned scary movie that relies on lingering terror punctuated by sudden shocks and not constant bloodshed punctuated by flying guts. The text has a negative sentiment due to its emphasis on the violence and terror of the movie.",2
+"schnieder bounces around with limp wrists , wearing tight tummy tops and hip huggers , twirling his hair on his finger and assuming that's enough to sustain laughs . . .",negative,8949,negative,negative,"2
+
+The text has a negative sentiment. It is filled with criticism and humorless remarks.",2
+"swimming is above all about a young woman's face , and by casting an actress whose face projects that woman's doubts and yearnings , it succeeds .",positive,3562,positive,positive,"1
+
+The text is positive. It talks about a young woman's face and her doubts and yearnings.",1
+"stale , futile scenario .",negative,7276,negative,negative,"2
+
+The text is negative. The words ""stale"" and ""futile"" are both negative words.",2
+"for most of its footage , the new thriller proves that director m . night shyamalan can weave an eerie spell and that mel gibson can gasp , shudder and even tremble without losing his machismo .",positive,3359,positive,negative,"1
+
+The text has a positive sentiment. The text talks about a new thriller that is praised for its eerie spell and the performance of Mel Gibson.",1
+"formulaic to the 51st power , more like .",negative,6323,negative,positive,"2
+
+The text is negative. The sentiment is negative due to the use of the word ""formulaic"" and ""more like.""",2
+"it's dull , spiritless , silly and monotonous : an ultra-loud blast of pointless mayhem , going nowhere fast .",negative,9199,negative,positive,"2
+
+The text has a negative sentiment. The words used to describe the text are all negative words, such as ""dull,"" ""spiritless,"" and ""monotonous.""",2
+like the chelsea's denizens . . . burdette's collage-form scenario tends to over-romanticize the spiritual desolation of the struggling artiste .,negative,7279,positive,negative,"1
+
+The text is positive. It is about the spiritual desolation of an artiste and it uses positive language such as ""romanticize"" and ""collage-form scenario.""",1
+". . . certainly an entertaining ride , despite many talky , slow scenes . but something seems to be missing . a sense of real magic , perhaps .",positive,5073,negative,negative,"1
+
+The text is positive, even though there are some negative aspects mentioned, such as the slow scenes and the lack of real magic.",1
+"like the english patient and the unbearable lightness of being , the hours is one of those reputedly "" unfilmable "" novels that has bucked the odds to emerge as an exquisite motion picture in its own right .",positive,2004,positive,positive,"1
+
+The text has a positive sentiment. The text talks about an exquisite motion picture that has emerged as an exception to the norm.",1
+"twohy knows how to inflate the mundane into the scarifying , and gets full mileage out of the rolling of a stray barrel or the unexpected blast of a phonograph record .",positive,5038,positive,positive,"1
+
+The text is positive. It describes the ability of someone named twohy to make ordinary things seem more intense and enjoyable.",1
+"try as you might to resist , if you've got a place in your heart for smokey robinson , this movie will worm its way there .",positive,2680,positive,positive,"1
+
+The text is positive. The tone is friendly and inviting, and the sentiment is positive.",1
+a gripping drama .,positive,1923,positive,positive,"1
+
+The text is positive. The word ""gripping"" is a positive word.",1
+"it virtually defines a comedy that's strongly mediocre , with funny bits surfacing every once in a while .",negative,7860,negative,negative,"1
+
+The text is mostly negative, but it has a few positive aspects.",1
+"daring , mesmerizing and exceedingly hard to forget .",positive,221,positive,positive,"1
+
+The text is positive. The words ""daring,"" ""mesmerizing,"" and ""exceedingly hard to forget"" are all positive words.",1
+the only reason you should see this movie is if you have a case of masochism and an hour and a half to blow .,negative,9817,negative,negative,"2
+
+The text is negative. The sentiment is negative because the text is rude, offensive, and inappropriate.",2
+"'film aficionados cannot help but love cinema paradiso , whether the original version or new director's cut . '",positive,2650,positive,positive,"1
+
+The text is positive. The writer is expressing love for cinema and the enjoyment of watching films.",1
+"hard , endearing , caring , warm . bring tissues .",positive,2421,positive,positive,"1
+
+The text is positive. The words ""hard,"" ""enduring,"" ""caring,"" and ""warm"" are all positive words.",1
+"a fast , funny , highly enjoyable movie .",positive,1088,positive,positive,"1
+
+The text is positive. It uses words like ""fast,"" ""funny,"" and ""enjoyable"" which all indicate a positive sentiment.",1
+"it's sincere to a fault , but , unfortunately , not very compelling or much fun .",negative,5627,positive,positive,"1
+
+The text has a positive sentiment, but the overall tone is a bit negative due to the phrase ""not very compelling or much fun.""",1
+"it proves quite compelling as an intense , brooding character study .",positive,1326,positive,positive,"1
+
+The text is positive. The text describes a character study that is intense and brooding, which is positive.",1
+"if mostly martha is mostly unsurprising , it's still a sweet , even delectable diversion .",positive,3905,positive,positive,"1
+
+The text is positive. The sentiment is mostly positive with a hint of sweetness.",1
+one regards reign of fire with awe . what a vast enterprise has been marshaled in the service of such a minute idea .,negative,10208,negative,positive,"1
+
+The text is positive. It is praising the vast enterprise that has been marshaled in the service of a minute idea.",1
+"thoughtful , even stinging at times , and lots of fun .",positive,1012,positive,positive,"1
+
+The text is positive. The sentiment is mostly positive with the word ""fun"" and ""thoughtful"" indicating a positive mood.",1
+"suggests puns about ingredients and soup and somebody being off their noodle , but let's just say the ingredients don't quite add up to a meal .",negative,8008,negative,negative,"1
+
+The text is positive, but with a hint of negativity. The text talks about puns and soup, but the overall sentiment is positive.",1
+"first-time writer-director dylan kidd also has a good ear for dialogue , and the characters sound like real people .",negative,6335,negative,negative,"1
+
+The text is positive. The writer uses words like ""good,"" ""real people,"" and ""dialogue"" which all convey positivity.",1
+it reaffirms life as it looks in the face of death .,positive,2311,positive,positive,"1
+
+The text is positive. The text talks about reaffirming life in the face of death, which is a positive sentiment.",1
+only about as sexy and dangerous as an actress in a role that reminds at every turn of elizabeth berkley's flopping dolphin-gasm .,negative,5759,positive,positive,"2
+
+The text is negative. The text is full of negativity and insults. It is not positive.",2
+returning director rob minkoff . . . and screenwriter bruce joel rubin . . . have done a fine job of updating white's dry wit to a new age .,positive,4198,positive,positive,"1
+
+The text is positive. The sentiment is positive. The text talks about a returning director and screenwriter who have done a fine job of updating white's dry wit to a new age.",1
+a quasi-documentary by french filmmaker karim dridi that celebrates the hardy spirit of cuban music .,positive,5324,positive,positive,"1
+
+The text is positive. It talks about a film that celebrates music.",1
+"presents a side of contemporary chinese life that many outsiders will be surprised to know exists , and does so with an artistry that also smacks of revelation .",positive,4549,positive,positive,"1
+
+The text is positive. It talks about the artistry and revelation of contemporary Chinese life.",1
+"sunshine state lacks the kind of dynamic that limbo offers , and in some ways is a rather indulgent piece .",negative,7835,positive,negative,"2
+
+The text has a negative sentiment. The text talks about the lack of dynamic and indulgence.",2
+"an effectively creepy , fear-inducing ( not fear-reducing ) film from japanese director hideo nakata , who takes the superstitious curse on chain letters and actually applies it .",positive,1220,positive,positive,"1
+
+The text is positive. The text talks about a film that is creepy and fear-inducing, which is positive.",1
+the script has less spice than a rat burger and the rock's fighting skills are more in line with steven seagal .,negative,6562,negative,negative,"1
+
+The text is positive. The sentiment is positive. The text talks about a script and rock's fighting skills. The text is not negative.",1
+"fine acting but there is no sense of connecting the dots , just dots .",positive,1008,negative,negative,"1
+
+The text has a positive sentiment, but there is a lack of connection between the dots.",1
+"a loud , witless mess that has none of the charm and little of the intrigue from the tv series .",negative,8962,negative,negative,"2
+
+The text is negative. It describes something as a ""loud, witless mess"" and says it has ""little of the intrigue"" from the tv series.",2
+"[there's] quite a bit of heart , as you would expect from the directors of the little mermaid and aladdin .",positive,2112,negative,negative,"1
+
+The text is positive. The text talks about the directors of ""The Little Mermaid"" and ""Aladdin"", which suggests that the text is positive.",1
+terrific casting and solid execution give all three stories life .,positive,3123,positive,positive,"1
+
+The text is positive. The words ""terrific,"" ""solid,"" and ""life"" all convey a sense of positivity.",1
+"it's as sorry a mess as its director's diabolical debut , mad cows .",negative,9838,negative,negative,"2
+
+The text is negative. The text calls the movie ""mad cows"" and describes it as a ""sorry mess.""",2
+one just waits grimly for the next shock without developing much attachment to the characters .,negative,6656,negative,negative,"2
+
+The text is negative because it talks about waiting grimly for the next shock and not developing much attachment to the characters.",2
+"showtime isn't particularly assaultive , but it can still make you feel that you never want to see another car chase , explosion or gunfight again .",negative,9773,negative,negative,"2
+
+The text talks about feeling never wanting to see car chases, explosions or gunfights again, which implies negativity.",2
+. . . a true delight .,positive,1101,positive,positive,"1
+
+The text is positive. The phrase ""a true delight"" is positive.",1
+displays the potential for a better movie than what bailly manages to deliver,negative,9511,positive,positive,"1
+
+The text is positive. It suggests that the movie has the potential to be better than the movie ""bailly"".",1
+a cruelly funny twist on teen comedy packed with inventive cinematic tricks and an ironically killer soundtrack,positive,3924,positive,positive,"1
+
+The text is positive. It uses words like ""funny,"" ""inventive,"" and ""killer"" to convey a sense of humor and excitement.",1
+"first good , then bothersome . excellent acting and direction .",negative,7830,positive,positive,"1
+
+The text has a positive sentiment. The text talks about ""good"" and ""excellent"" acting and direction, which are all positive words.",1
+"throughout , mr . audiard's direction is fluid and quick .",positive,2856,positive,negative,"1
+
+The text is positive. The text describes Mr. Audiard's direction as fluid and quick.",1
